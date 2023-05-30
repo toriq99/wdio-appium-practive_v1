@@ -1,3 +1,5 @@
+const path = require('path')
+
 exports.config = {
     //
     // ====================
@@ -60,7 +62,7 @@ exports.config = {
         'appium:deviceName': 'Android GoogleAPI Emulator', // or "iPhone Simulator"
         'appium:platformVersion': '12.0', // or "16.2" (for running iOS v16)
         'appium:automationName': 'UiAutomator2', // or "XCUITest"
-        'appium:app': "app/android/ApiDemos-debug.apk"
+        'appium:app': path.join(process.cwd(), "app/android/ApiDemos-debug.apk")
     }],
     //
     // ===================
