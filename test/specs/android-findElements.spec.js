@@ -13,12 +13,32 @@ describe('Android Elements test', () => {
         await expect(actionBar).toBeExisting()
     })
 
-    it.only('find elements by class', async() => {
+    it('find elements by class', async() => {
 
         // find elements by class
         const className = await $('android.widget.TextView')
 
         // assertion
         await expect(className).toHaveText("API Demos")
+    })
+
+    it('find elements by xpath, resource-id, text, class', async() => {
+
+        // find by xpath --> (//tagname[@attribute=value])
+        await $('//android.widget.TextView[@content-desc="Alert Dialogs"]').click()
+        
+        // find by resource id
+        await $('//android.widget.Button[@resource-id="io.appium.android.apis:id/select_button"]').click()
+
+        // find by text -- error invalid(?)
+        // await $('//android.widget.TextView[@text:"Command two"]').click()
+        
+        // find by index
+        await $('//android.widget.TextView[@index="1"]').click()
+
+        // find by class and assertion
+        const textAssertion = await $('//android.widget.TextView')
+
+        await expect(textAssertion).toHaveText("You selected: 1 , Command two")
     })
 })
