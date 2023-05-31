@@ -58,7 +58,6 @@ exports.config = {
     capabilities: [{
         // capabilities for local Appium web tests on an Android Emulator
         platformName: 'Android', // or "iOS"
-        // browserName: 'Chrome', // or "Safari"
         'appium:deviceName': 'Pixel_3a_API_33_x86_64', // or "iPhone Simulator"
         'appium:platformVersion': '13.0', // or "16.2" (for running iOS v16)
         'appium:automationName': 'UiAutomator2', // or "XCUITest"
