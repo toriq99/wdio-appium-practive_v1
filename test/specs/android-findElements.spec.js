@@ -15,8 +15,10 @@ describe('Android Elements test', () => {
 
     it.only('find elements by class', async() => {
 
+        // find elements by class
         const className = await $('android.widget.TextView')
 
-        console.log(await className.getText())
+        // assertion
+        await expect(className).toHaveText("API Demos")
     })
 })
